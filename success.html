@@ -7,14 +7,11 @@
   <style>
     body {
 
-      <!-- PAS DI BAWAH BODY CONTENT, TAPI MASIH DI BODY -->
-<!-- Toast notif -->
 <div id="toast" class="toast"></div>
 
 <script>
   const toast = document.getElementById('toast');
 
-  // fungsi showToast
   function showToast(msg, duration = 3500) {
     toast.textContent = msg;
     toast.style.position = 'fixed';
@@ -30,13 +27,11 @@
     toast.style.opacity = '0';
     toast.style.transition = 'opacity 0.3s, transform 0.3s';
 
-    // tampilkan
     setTimeout(() => {
       toast.style.opacity = '1';
       toast.style.transform = 'translateX(-50%) translateY(0)';
     }, 50);
 
-    // hilangkan otomatis
     setTimeout(() => {
       toast.style.opacity = '0';
       toast.style.transform = 'translateX(-50%) translateY(-20px)';
@@ -44,9 +39,9 @@
     }, duration);
   }
 
-  // notif pas halaman load
+  // notif pas load success page
   window.addEventListener('DOMContentLoaded', () => {
-    showToast("Selamat! Form lu sedang ditinjau Founder. 🎉");
+    showToast("Selamat! Form lo sedang ditinjau. ✅", 4000);
   });
 </script>
       
@@ -239,6 +234,7 @@
   </div>
 </body>
 </html>
+
 
 
 
