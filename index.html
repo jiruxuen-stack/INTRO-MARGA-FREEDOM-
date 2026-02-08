@@ -1,16 +1,64 @@
-<form>
-    <label for="gender">Gender:</label>
-    <select id="gender" name="gender">
-        <option value="male">Male</option>
-        <option value="female">Female</option>
-        <option value="other">Other</option>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marga Freedom — Intro Member</title>
+</head>
+<body>
+  <h1>MARGA FREEDOM</h1>
+  <p><strong>Freedom is not chaos. Freedom is self-control.</strong></p>
+  <p>Isi form ini dengan jujur dan singkat. Tidak perlu lebay.</p>
+
+  <hr />
+
+  <form action="https://formspree.io/f/xgozqeaa" method="POST">
+    <label>Nama</label><br />
+    <input type="text" name="nama" required />
+    <br /><br />
+
+    <label>Gender</label><br />
+    <select name="gender" required>
+      <option value="">-- Pilih --</option>
+      <option value="Laki-laki">Laki-laki</option>
+      <option value="Perempuan">Perempuan</option>
+      <option value="Lainnya">Lainnya</option>
     </select>
-    <br>
-    <label for="whatsapp">No WhatsApp:</label>
-    <input type="text" id="whatsapp" name="whatsapp" placeholder="Enter your WhatsApp number" required>
-    <br>
-    <label for="tiktok">Nama TikTok:</label>
-    <input type="text" id="tiktok" name="tiktok" placeholder="Enter your TikTok name" required>
-    <br>
-    <input type="submit" value="Submit">
-</form>
+    <br /><br />
+
+    <label>No WhatsApp</label><br />
+    <input type="tel" name="whatsapp" placeholder="+62xxxxxxxxxx" required />
+    <br /><br />
+
+    <label>Nama TikTok</label><br />
+    <input type="text" name="tiktok" placeholder="@username" />
+    <br /><br />
+
+    <label>Umur</label><br />
+    <input type="number" name="umur" required />
+    <br /><br />
+
+    <label>Asal</label><br />
+    <input type="text" name="asal" required />
+    <br /><br />
+
+    <label>Minat / Hobi</label><br />
+    <input type="text" name="minat" />
+    <br /><br />
+
+    <label>Alasan Join Marga Freedom</label><br />
+    <textarea name="alasan" rows="4" required></textarea>
+    <br /><br />
+
+    <label>Prinsip Hidup</label><br />
+    <textarea name="prinsip" rows="3"></textarea>
+    <br /><br />
+
+    <button type="submit">Kirim Intro</button>
+  </form>
+
+  <hr />
+
+  <p><em>Masuk dengan niat. Bertahan dengan sikap.</em></p>
+</body>
+</html>
