@@ -1,7 +1,13 @@
 const form = document.getElementById('introForm');
 
 form.addEventListener('submit', async (e) => {
-  e.preventDefault(); // cegah redirect Formspree default
+  e.preventDefault(); // cegah default form submit
+
+  // validasi form
+  if (!form.checkValidity()) {
+    alert("Lengkapi semua field wajib.");
+    return;
+  }
 
   const formData = new FormData(form);
 
@@ -13,12 +19,13 @@ form.addEventListener('submit', async (e) => {
     });
 
     if (response.ok) {
-      window.location.href = "success.html"; // redirect ke halaman utama / sukses
+      // submit sukses → redirect ke halaman success
+      window.location.href = "https://jiruxuen-stack.github.io/INTRO-MARGA-FREEDOM-/success.html";
     } else {
-      alert("Gagal submit, coba lagi.");
+      alert("Gagal submit. Coba lagi.");
     }
-  } catch (error) {
-    alert("Ada error. Cek koneksi.");
-    console.error(error);
+  } catch (err) {
+    console.error(err);
+    alert("Terjadi error, cek koneksi.");
   }
 });
