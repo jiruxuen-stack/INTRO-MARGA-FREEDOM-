@@ -78,24 +78,9 @@
     </footer>
   </div>
 
-  <script>
-    const form = document.getElementById('introForm');
-    const introBox = document.getElementById('introBox');
-
-    // notif saat klik box intro
-    introBox.addEventListener('click', () => {
-      alert("Isi form intro dulu sebelum gabung grup!");
-    });
-
-    // notif pas submit form
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      if (!form.checkValidity()) {
-        alert("Lengkapi semua field wajib.");
-        return;
-      }
-
+  <script src="form.js"></script>
+</body>
+</html>
       // notif tambahan sebelum submit
       alert("Data terkirim! Tunggu validasi admin sebelum gabung grup.");
 
