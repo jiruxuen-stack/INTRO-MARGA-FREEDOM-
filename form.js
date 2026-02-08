@@ -16,7 +16,7 @@ introBox.addEventListener('click', () => {
 
 // notif pas load halaman
 window.addEventListener('load', () => {
-  showToast("Isi Semua Data Di Bawah ya! 🌌", 4000);
+  showToast("Lengkapi Semua Data Di Bawah🤝! 🌌", 4000);
 });
 
 // submit form
@@ -24,7 +24,7 @@ form.addEventListener('submit', async (e) => {
   e.preventDefault();
 
   if (!form.checkValidity()) {
-    showToast("Lengkapi semua field wajib.", 3000);
+    showToast("Lengkapi semua field. wajib.", 3000);
     return;
   }
 
