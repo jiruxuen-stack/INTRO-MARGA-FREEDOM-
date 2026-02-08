@@ -2,17 +2,16 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Marga Freedom — Intro Member</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
   <div class="container">
 
     <h1>⟡ MARGA FREEDOM ⟡</h1>
     <p class="subtitle">
-      <strong>Freedom is not chaos.</strong><br />
+      <strong>Freedom is not chaos.</strong><br>
       Freedom is self-control.
     </p>
 
@@ -20,17 +19,17 @@
 
     <div class="intro-box">
       <p class="intro-quote">
-        ❝ Freedom bukan tempat sembarang orang.<br />
+        ❝ Freedom bukan tempat sembarang orang.<br>
         Hanya Pemuda Yang Mencari Kebebasan. ❞
       </p>
     </div>
 
     <div class="divider">⟡ ⟡ ⟡</div>
 
-    <form action="https://formspree.io/f/xgozqeaa" method="POST">
+    <form id="introForm" action="https://formspree.io/f/xgozqeaa" method="POST">
 
       <label for="nama">⟡ Nama</label>
-      <input id="nama" type="text" name="nama" required />
+      <input id="nama" type="text" name="nama" required>
 
       <label for="gender">⟡ Gender</label>
       <select id="gender" name="gender" required>
@@ -42,20 +41,19 @@
 
       <label for="whatsapp">⟡ No WhatsApp</label>
       <small class="helper">Aktif. Bukan nomor cadangan.</small>
-      <input id="whatsapp" type="tel" name="whatsapp" placeholder="+62xxxxxxxxxx" 
-             pattern="^\+62\d{9,13}$" title="Masukkan nomor WA valid +62xxxxxxxxxx" required />
+      <input id="whatsapp" type="tel" name="whatsapp" placeholder="+62xxxxxxxxxx" pattern="^\+62\d{9,13}$" required>
 
       <label for="tiktok">⟡ Nama TikTok</label>
-      <input id="tiktok" type="text" name="tiktok" placeholder="@username" />
+      <input id="tiktok" type="text" name="tiktok" placeholder="@username">
 
       <label for="umur">⟡ Umur</label>
-      <input id="umur" type="number" name="umur" min="5" max="120" required />
+      <input id="umur" type="number" name="umur" required>
 
       <label for="asal">⟡ Asal</label>
-      <input id="asal" type="text" name="asal" required />
+      <input id="asal" type="text" name="asal" required>
 
       <label for="minat">⟡ Minat / Hobi</label>
-      <input id="minat" type="text" name="minat" />
+      <input id="minat" type="text" name="minat">
 
       <label for="alasan">⟡ Alasan Join Marga Freedom</label>
       <textarea id="alasan" name="alasan" rows="4" required></textarea>
@@ -67,13 +65,10 @@
       <textarea id="makna_freedom" name="makna_freedom" rows="3" placeholder="Singkat. Jujur."></textarea>
 
       <!-- FILTER LEVEL 3 -->
-      <label for="setuju_rules" class="checkbox">
-        <input id="setuju_rules" type="checkbox" name="setuju_rules" required />
+      <label class="checkbox">
+        <input type="checkbox" name="setuju_rules" required>
         Saya sudah membaca dan setuju dengan rules Marga Freedom.
       </label>
-
-      <!-- HIDDEN REDIRECT LEVEL 4 -->
-      <input type="hidden" name="_redirect" value="https://jiruxuen-stack.github.io/INTRO-MARGA-FREEDOM-/success.html">
 
       <button type="submit">⟡ Saya Siap Masuk ⟡</button>
     </form>
@@ -85,5 +80,33 @@
     </footer>
 
   </div>
+
+  <!-- JS Submit + Redirect -->
+  <script>
+    const form = document.getElementById('introForm');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault(); // stop default submit
+
+      const formData = new FormData(form);
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: formData
+        });
+
+        if (res.ok) {
+          // sukses → redirect manual ke halaman utama / success
+          window.location.href = "https://jiruxuen-stack.github.io/INTRO-MARGA-FREEDOM-/success.html";
+        } else {
+          alert("Gagal submit. Coba lagi.");
+        }
+      } catch (err) {
+        console.error(err);
+        alert("Terjadi error. Coba lagi.");
+      }
+    });
+  </script>
 </body>
 </html>
