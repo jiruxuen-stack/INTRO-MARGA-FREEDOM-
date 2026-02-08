@@ -40,10 +40,8 @@ form.addEventListener('submit', async (e) => {
     });
 
     if (response.ok) {
-      showToast("Data terkirim! ✅", 2500);
-      setTimeout(() => {
-        window.location.href = "success.html";
-      }, 1200);
+      // hapus setTimeout, langsung redirect
+      window.location.href = "success.html";
     } else {
       showToast("Gagal submit. Coba lagi.", 3000);
     }
@@ -52,4 +50,5 @@ form.addEventListener('submit', async (e) => {
     showToast("Terjadi error, cek koneksi.", 3000);
   }
 });
+
 
