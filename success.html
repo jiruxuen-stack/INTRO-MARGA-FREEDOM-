@@ -66,7 +66,47 @@
       font-size: 0.8rem;
       color: #8f86b5;
     }
+    
+<!-- konten success html lo di atas -->
 
+<!-- SCRIPT NOTIF -->
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    showToast("Selamat! Form lo sedang ditinjau.");
+  });
+
+  function showToast(msg) {
+    const toast = document.createElement('div');
+    toast.textContent = msg;
+    toast.style.position = 'fixed';
+    toast.style.top = '20px';
+    toast.style.right = '20px';
+    toast.style.padding = '12px 20px';
+    toast.style.background = '#7a5cff';
+    toast.style.color = '#fff';
+    toast.style.borderRadius = '8px';
+    toast.style.boxShadow = '0 4px 12px rgba(0,0,0,0.3)';
+    toast.style.zIndex = 9999;
+    toast.style.opacity = '0';
+    toast.style.transition = 'opacity 0.5s, transform 0.5s';
+    document.body.appendChild(toast);
+
+    setTimeout(() => {
+      toast.style.opacity = '1';
+      toast.style.transform = 'translateY(0)';
+    }, 50);
+
+    setTimeout(() => {
+      toast.style.opacity = '0';
+      toast.style.transform = 'translateY(-20px)';
+      setTimeout(() => document.body.removeChild(toast), 500);
+    }, 3000);
+  }
+</script>
+
+</body>
+</html>
+      
     .rule-box {
       background: #261845;
       border: 1px solid #3a2a5e;
@@ -155,6 +195,7 @@
   </div>
 </body>
 </html>
+
 
 
 
