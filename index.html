@@ -82,26 +82,5 @@
   <div id="toast" class="toast"></div>
 
   <script src="form.js"></script>
-  <script>
-    const toast = document.getElementById('toast');
-
-    // fungsi toast
-    function showToast(msg, duration = 3000) {
-      toast.textContent = msg;
-      toast.classList.add('show');
-      setTimeout(() => toast.classList.remove('show'), duration);
-    }
-
-    // notif klik intro-box
-    const introBox = document.querySelector('.intro-box');
-    introBox.addEventListener('click', () => {
-      showToast("Klik form untuk isi data diri, jangan malas! ✨", 3500);
-    });
-
-    // notif pas load halaman (optional)
-    window.addEventListener('load', () => {
-      showToast("Selamat datang di Marga Freedom! 🌌", 4000);
-    });
-  </script>
 </body>
 </html>
