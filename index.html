@@ -42,13 +42,14 @@
 
       <label for="whatsapp">⟡ No WhatsApp</label>
       <small class="helper">Aktif. Bukan nomor cadangan.</small>
-      <input id="whatsapp" type="tel" name="whatsapp" placeholder="+62xxxxxxxxxx" pattern="^\+62\d{9,13}$" required />
+      <input id="whatsapp" type="tel" name="whatsapp" placeholder="+62xxxxxxxxxx" 
+             pattern="^\+62\d{9,13}$" title="Masukkan nomor WA valid +62xxxxxxxxxx" required />
 
       <label for="tiktok">⟡ Nama TikTok</label>
       <input id="tiktok" type="text" name="tiktok" placeholder="@username" />
 
       <label for="umur">⟡ Umur</label>
-      <input id="umur" type="number" name="umur" required />
+      <input id="umur" type="number" name="umur" min="5" max="120" required />
 
       <label for="asal">⟡ Asal</label>
       <input id="asal" type="text" name="asal" required />
@@ -66,8 +67,8 @@
       <textarea id="makna_freedom" name="makna_freedom" rows="3" placeholder="Singkat. Jujur."></textarea>
 
       <!-- FILTER LEVEL 3 -->
-      <label class="checkbox">
-        <input type="checkbox" name="setuju_rules" required />
+      <label for="setuju_rules" class="checkbox">
+        <input id="setuju_rules" type="checkbox" name="setuju_rules" required />
         Saya sudah membaca dan setuju dengan rules Marga Freedom.
       </label>
 
