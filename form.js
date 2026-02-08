@@ -35,7 +35,7 @@ form.addEventListener('submit', async (e) => {
   const formData = new FormData(form);
 
   try {
-    const response = await fetch("https://formspree.io/f/xgozqeaa", {
+    const response = await fetch("https://formspree.io/f/mojnqbee", {
       method: "POST",
       body: formData,
       headers: { 'Accept': 'application/json' }
@@ -52,3 +52,4 @@ form.addEventListener('submit', async (e) => {
     showToast("Terjadi error, cek koneksi.", 3000);
   }
 });
+
