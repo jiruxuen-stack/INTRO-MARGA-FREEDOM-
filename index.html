@@ -5,77 +5,73 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Marga Freedom — Intro Member</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: linear-gradient(180deg, #0b0712, #120a1f);
+      color: #e6e3ee;
+      font-family: system-ui, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 600px;
+      background: #1a102b;
+      border: 1px solid #3a2a5e;
+      border-radius: 12px;
+      padding: 40px 30px;
+      box-shadow: 0 0 25px rgba(122, 92, 255, 0.4);
+    }
+
+    h1 { color: #c9b6ff; margin-bottom: 16px; letter-spacing: 2px; }
+    p, li { font-size: 0.95rem; color: #b8b2cc; line-height: 1.5; }
+    .divider { margin: 20px 0; color: #9b84ff; font-weight: bold; }
+    ul { text-align: left; padding-left: 20px; }
+    ul li { margin-bottom: 10px; }
+    label { display: block; margin-top: 12px; text-align: left; }
+    input, select, textarea { width: 100%; margin-top: 4px; padding: 8px; border-radius: 6px; border: 1px solid #3a2a5e; background: #120a1f; color: #e6e3ee; }
+    button { margin-top: 16px; padding: 12px 24px; background: #7a5cff; color: #0e0a1a; border-radius: 8px; font-weight: 600; cursor: pointer; }
+    button:hover { background: #9b84ff; }
+    footer { margin-top: 28px; font-size: 0.8rem; color: #8f86b5; }
+
+    /* toast */
+    #toast {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #7a5cff;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      opacity: 0;
+      z-index: 9999;
+      transition: opacity 0.3s, transform 0.3s;
+    }
+    #toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+  </style>
 </head>
 <body>
   <div class="container">
-    
-<!-- Toast notif -->
-<div id="toast" class="toast"></div>
+    <div id="toast" class="toast"></div>
 
-<script>
-  const toast = document.getElementById('toast');
-
-  // fungsi showToast
-  function showToast(msg, duration = 3500) {
-    toast.textContent = msg;
-    toast.style.position = 'fixed';
-    toast.style.top = '20px';
-    toast.style.left = '50%';
-    toast.style.transform = 'translateX(-50%)';
-    toast.style.background = '#7a5cff';
-    toast.style.color = '#fff';
-    toast.style.padding = '12px 24px';
-    toast.style.borderRadius = '8px';
-    toast.style.boxShadow = '0 4px 12px rgba(0,0,0,0.3)';
-    toast.style.zIndex = 9999;
-    toast.style.opacity = '0';
-    toast.style.transition = 'opacity 0.3s, transform 0.3s';
-
-    // tampilkan
-    setTimeout(() => {
-      toast.style.opacity = '1';
-      toast.style.transform = 'translateX(-50%) translateY(0)';
-    }, 50);
-
-    // hilangkan otomatis
-    setTimeout(() => {
-      toast.style.opacity = '0';
-      toast.style.transform = 'translateX(-50%) translateY(-20px)';
-      setTimeout(() => toast.textContent = '', 300);
-    }, duration);
-  }
-
-  // notif pas halaman load
-  window.addEventListener('DOMContentLoaded', () => {
-    showToast("Selamat datang di Marga Freedom! 🌌");
-  });
-
-  // notif pas klik intro-box
-  const introBox = document.querySelector('.intro-box');
-  introBox.addEventListener('click', () => {
-    showToast("Klik form untuk isi data diri, jangan malas! ✨", 3500);
-  });
-</script>
-    
     <h1>⟡ MARGA FREEDOM ⟡</h1>
-    <p class="subtitle">
-      <strong>Freedom is not chaos.</strong><br>
-      Freedom is self-control.
-    </p>
-
+    <p class="subtitle"><strong>Freedom is not chaos.</strong><br>Freedom is self-control.</p>
     <div class="divider">✦ ✦ ✦</div>
 
     <div class="intro-box">
-      <p class="intro-quote">
-        ❝ Freedom bukan tempat sembarang orang.<br>
-        Hanya Pemuda Yang Mencari Kebebasan. ❞
-      </p>
+      <p class="intro-quote">❝ Freedom bukan tempat sembarang orang.<br>Hanya Pemuda Yang Mencari Kebebasan. ❞</p>
     </div>
 
     <div class="divider">⟡ ⟡ ⟡</div>
 
     <form id="introForm">
-
       <label>⟡ Nama</label>
       <input type="text" name="nama" required>
 
@@ -120,14 +116,8 @@
     </form>
 
     <div class="divider">✦ ✦ ✦</div>
-
-    <footer>
-      ⟡ Masuk dengan niat. Bertahan dengan sikap. ⟡
-    </footer>
+    <footer>⟡ Masuk dengan niat. Bertahan dengan sikap. ⟡</footer>
   </div>
-
-  <!-- Toast notif -->
-  <div id="toast" class="toast"></div>
 
   <script src="form.js"></script>
 </body>
